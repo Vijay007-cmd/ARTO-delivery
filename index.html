@@ -1,0 +1,2027 @@
+        // Initialize hamburger visibility
+        if (window.innerWidth <= 768) {
+            document.querySelector('.hamburger').style.display = 'flex';
+        }
+
+        // Modal functions for new features
+        function showNightOwlModal() {
+            const modal = document.createElement('div');
+            modal.className = 'modal show';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 500px;">
+                    <button class="close-modal" onclick="this.parentElement.parentElement.remove()">&times;</button>
+                    <h2>🌙 Night Owl Mode</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="color: #333; margin-bottom: 1rem;">Available 10 PM - 6 AM</h4>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: #f8f9fa; border-radius: 10px;">
+                                <span>⚡ Red Bull 4-pack</span>
+                                <span style="font-weight: 600;">₹299</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: #f8f9fa; border-radius: 10px;">
+                                <span>💡 Adjustable LED Desk Lamp</span>
+                                <span style="font-weight: 600;">₹1,299</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; padding: 0.8rem; background: #f8f9fa; border-radius: 10px;">
+                                <span>☕ Coffee & Snacks Combo</span>
+                                <span style="font-weight: 600;">₹199</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Order Night Essentials</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function showTeacherListsModal() {
+            const modal = document.createElement('div');
+            modal.className = 'modal show';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 600px;">
+                    <button class="close-modal" onclick="this.parentElement.parentElement.remove()">&times;</button>
+                    <h2>📋 Teacher's Recommended Lists</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong style="color: #333;">Prof. Sarah Chen - Design Thinking</strong>
+                                    <span style="background: #ff6b6b; color: white; padding: 0.2rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">LIVE</span>
+                                </div>
+                                <p style="color: #666; margin-bottom: 0.5rem;">Complete kit for workshop sessions</p>
+                                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                    <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">Markers</span>
+                                    <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">Grid Paper</span>
+                                    <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">+3 more</span>
+                                </div>
+                            </div>
+                            <div style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong style="color: #333;">Dr. Meera Joshi - Architecture</strong>
+                                    <span style="background: #26de81; color: white; padding: 0.2rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">UPDATED</span>
+                                </div>
+                                <p style="color: #666; margin-bottom: 0.5rem;">Final project essentials</p>
+                                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                    <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">Technical Pens</span>
+                                    <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">Scale Rulers</span>
+                                    <span style="background: #f0f0f0; padding: 0.3rem 0.8rem; border-radius: 10px; font-size: 0.8rem;">+6 more</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Browse All Lists</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        function showBuddyModal() {
+            const modal = document.createElement('div');
+            modal.className = 'modal show';
+            modal.innerHTML = `
+                <div class="modal-content" style="max-width: 500px;">
+                    <button class="close-modal" onclick="this.parentElement.parentElement.remove()">&times;</button>
+                    <h2>👥 Find Study Buddy</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 15px; display: flex; gap: 1rem; align-items: center;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">🎨</div>
+                                <div style="flex: 1;">
+                                    <strong style="color: #333;">Arjun Kapoor</strong>
+                                    <p style="color: #666; margin: 0.2rem 0;">Architecture, 3rd Year</p>
+                                    <p style="color: #26de81; font-size: 0.8rem; margin: 0;">✅ 94% goal completion</p>
+                                </div>
+                                <button class="btn btn-primary" style="padding: 0.5rem 1rem;">Connect</button>
+                            </div>
+                            <div style="padding: 1rem; border: 2px solid #e0e0e0; border-radius: 15px; display: flex; gap: 1rem; align-items: center;">
+                                <div style="width: 50px; height: 50px; background: linear-gradient(45deg, #ff6b6b, #feca57); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">📐</div>
+                                <div style="flex: 1;">
+                                    <strong style="color: #333;">Sneha Menon</strong>
+                                    <p style="color: #666; margin: 0.2rem 0;">Industrial Design, 2nd Year</p>
+                                    <p style="color: #26de81; font-size: 0.8rem; margin: 0;">✅ 87% goal completion</p>
+                                </div>
+                                <button class="btn btn-primary" style="padding: 0.5rem 1rem;">Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary" style="width: 100%;">View All Matches</button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTO - Get Creative, Instantly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Splash Screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.8s ease;
+        }
+
+        .splash-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .logo-animation {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 30px rgba(255,255,255,0.5);
+            animation: logoGlow 2s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,107,107,0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        /* Login Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal h2 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .user-type-selection {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .user-type-btn {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            background: white;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .user-type-btn.active {
+            border-color: #667eea;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        /* Dashboard */
+        .dashboard {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .action-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .action-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .action-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Product Categories */
+        .categories-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+
+        .category-header {
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+        }
+
+        .product-list {
+            list-style: none;
+        }
+
+        .product-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-list li:last-child {
+            border-bottom: none;
+        }
+
+        .price {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Product Cards */
+        .products-section {
+            margin-bottom: 3rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            height: 200px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .delivery-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .add-to-cart {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+        }
+
+        /* Special Features */
+        .special-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .night-owl {
+            background: linear-gradient(45deg, #2c3e50, #4a6741);
+        }
+
+        .teacher-rec {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        .buddy-system {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+        }
+
+        /* Cart Icon */
+        .cart-icon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(45deg, #ff6b6b, #feca57);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(255,107,107,0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4757;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .dashboard {
+                padding: 1rem;
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .action-card {
+                padding: 1rem;
+            }
+
+            .action-card .icon {
+                font-size: 2rem;
+            }
+
+            .categories-grid,
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .special-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 0.8s ease;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.8s ease;
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="logo-animation">ARTO</div>
+        <div class="tagline">Get Creative, Instantly.</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">ARTO</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#quick-pick">Quick Pick</a></li>
+                <li><a href="#subscriptions">Subscriptions</a></li>
+                <li><a href="#buddy">Buddy System</a></li>
+            </ul>
+            <div class="user-actions">
+                <a href="#" class="btn btn-secondary" onclick="showLogin()">Login</a>
+                <a href="#" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="hideLogin()">&times;</button>
+            <h2>Welcome to ARTO</h2>
+            
+            <div class="user-type-selection">
+                <div class="user-type-btn active" onclick="selectUserType(this, 'student')">
+                    <div>📚</div>
+                    <div>Student</div>
+                </div>
+                <div class="user-type-btn" onclick="selectUserType(this, 'faculty')">
+                    <div>👨‍🏫</div>
+                    <div>Faculty</div>
+                </div>
+                <div class="user-type-btn" onclick="selectUserType(this, 'store')">
+                    <div>🏪</div>
+                    <div>Store</div>
+                </div>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Hero Section -->
+            <section class="hero-section fade-in">
+                <h1>Your Creative Journey Starts Here</h1>
+                <p>Premium art supplies delivered to architects, designers, and creative minds in 30 minutes</p>
+                <div class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Shopping</div>
+            </section>
+
+            <!-- Quick Actions -->
+            <section class="quick-actions slide-in-left">
+                <div class="action-card">
+                    <div class="icon">⚡</div>
+                    <h3>Quick Pick</h3>
+                    <p>30-min delivery zone</p>
+                </div>
+                <div class="action-card">
+                    <div class="icon">🌙</div>
+                    <h3>Night Owl Mode</h3>
+                    <p>Late-night essentials</p>
+                </div>
+                <div class="action-card">
+                    <div class="icon">📋</div>
+                    <h3>Teacher's List</h3>
+                    <p>Recommended supplies</p>
+                </div>
+                <div class="action-card">
+                    <div class="icon">👥</div>
+                    <h3>Buddy System</h3>
+                    <p>Study accountability</p>
+                </div>
+            </section>
+
+            <!-- Product Categories -->
+            <section class="categories-section">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="categories-grid slide-in-right">
+                    <div class="category-card">
+                        <div class="category-header">
+                            <h3>✏️ Art Tools</h3>
+                        </div>
+                        <div class="category-content">
+                            <ul class="product-list">
+                                <li>
+                                    <span>Copic Markers Set</span>
+                                    <span class="price">₹2,499</span>
+                                </li>
+                                <li>
+                                    <span>Staedtler Pencils</span>
+                                    <span class="price">₹299</span>
+                                </li>
+                                <li>
+                                    <span>Watercolor Set</span>
+                                    <span class="price">₹899</span>
+                                </li>
+                                <li>
+                                    <span>Brush Collection</span>
+                                    <span class="price">₹599</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-header">
+                            <h3>📐 Drafting Kits</h3>
+                        </div>
+                        <div class="category-content">
+                            <ul class="product-list">
+                                <li>
+                                    <span>A3 Drawing Sheets</span>
+                                    <span class="price">₹199</span>
+                                </li>
+                                <li>
+                                    <span>Compass Set</span>
+                                    <span class="price">₹449</span>
+                                </li>
+                                <li>
+                                    <span>Technical Pens</span>
+                                    <span class="price">₹799</span>
+                                </li>
+                                <li>
+                                    <span>Ruling Pens</span>
+                                    <span class="price">₹349</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-header">
+                            <h3>🌙 Night Owl Essentials</h3>
+                        </div>
+                        <div class="category-content">
+                            <ul class="product-list">
+                                <li>
+                                    <span>LED Desk Lamp</span>
+                                    <span class="price">₹1,299</span>
+                                </li>
+                                <li>
+                                    <span>Energy Drinks</span>
+                                    <span class="price">₹99</span>
+                                </li>
+                                <li>
+                                    <span>Comfort Mouse Pad</span>
+                                    <span class="price">₹399</span>
+                                </li>
+                                <li>
+                                    <span>Blue Light Glasses</span>
+                                    <span class="price">₹899</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Products -->
+            <section class="products-section">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="products-grid fade-in">
+                    <div class="product-card">
+                        <div class="product-image">
+                            ✏️
+                            <div class="delivery-badge">30 min</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Professional Copic Marker Set</h3>
+                            <p>Complete 72-piece marker collection perfect for architectural renderings and design work</p>
+                            <div class="product-footer">
+                                <span class="price">₹2,499</span>
+                                <button class="add-to-cart" onclick="addToCart('Copic Markers', 2499)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            📐
+                            <div class="delivery-badge">15 min</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>A3 Premium Drawing Sheets</h3>
+                            <p>High-quality 200gsm paper pack of 50 sheets, ideal for technical drawings and sketches</p>
+                            <div class="product-footer">
+                                <span class="price">₹199</span>
+                                <button class="add-to-cart" onclick="addToCart('A3 Sheets', 199)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            🖊️
+                            <div class="delivery-badge">20 min</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Staedtler Technical Pen Set</h3>
+                            <p>Precision technical pens with multiple line weights for detailed architectural drawings</p>
+                            <div class="product-footer">
+                                <span class="price">₹799</span>
+                                <button class="add-to-cart" onclick="addToCart('Technical Pens', 799)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            💡
+                            <div class="delivery-badge">45 min</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Adjustable LED Desk Lamp</h3>
+                            <p>Eye-care LED lamp with adjustable brightness and color temperature for night work sessions</p>
+                            <div class="product-footer">
+                                <span class="price">₹1,299</span>
+                                <button class="add-to-cart" onclick="addToCart('LED Lamp', 1299)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity Feed -->
+            <section class="activity-section">
+                <h2 class="section-title">Recent Activity</h2>
+                <div class="activity-feed fade-in">
+                    <div class="activity-item">
+                        <div class="activity-avatar">🎨</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-user">Priya Sharma</span>
+                                <span class="activity-time">2 mins ago</span>
+                            </div>
+                            <div class="activity-text">Just ordered Copic Markers for tomorrow's presentation! 📐</div>
+                            <div class="activity-status delivered">Delivered in 18 mins</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-avatar">📚</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-user">Prof. Rajesh Kumar</span>
+                                <span class="activity-time">15 mins ago</span>
+                            </div>
+                            <div class="activity-text">Updated "Architecture Studio Essentials" list for semester 5</div>
+                            <div class="activity-actions">
+                                <button class="activity-btn">View List</button>
+                                <button class="activity-btn">Share</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-avatar">🌙</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-user">Amit Patel</span>
+                                <span class="activity-time">1 hour ago</span>
+                            </div>
+                            <div class="activity-text">Night Owl delivery: Energy drinks + LED lamp at 1:30 AM ☕</div>
+                            <div class="activity-status completed">Completed project!</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-avatar">👥</div>
+                        <div class="activity-content">
+                            <div class="activity-header">
+                                <span class="activity-user">Study Group Alpha</span>
+                                <span class="activity-time">3 hours ago</span>
+                            </div>
+                            <div class="activity-text">4 members completed their weekly sketching goals! 🎯</div>
+                            <div class="activity-rewards">+50 points each</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trending Products -->
+            <section class="trending-section">
+                <h2 class="section-title">Trending This Week</h2>
+                <div class="trending-grid slide-in-left">
+                    <div class="trending-item">
+                        <div class="trending-rank">#1</div>
+                        <div class="trending-content">
+                            <div class="trending-name">Rotring Technical Pens</div>
+                            <div class="trending-orders">487 orders</div>
+                            <div class="trending-reason">📈 Final submissions week</div>
+                        </div>
+                        <div class="trending-price">₹1,299</div>
+                    </div>
+
+                    <div class="trending-item">
+                        <div class="trending-rank">#2</div>
+                        <div class="trending-content">
+                            <div class="trending-name">A2 Sheets Bundle</div>
+                            <div class="trending-orders">356 orders</div>
+                            <div class="trending-reason">🏗️ Architecture projects</div>
+                        </div>
+                        <div class="trending-price">₹349</div>
+                    </div>
+
+                    <div class="trending-item">
+                        <div class="trending-rank">#3</div>
+                        <div class="trending-content">
+                            <div class="trending-name">Red Bull Energy Pack</div>
+                            <div class="trending-orders">234 orders</div>
+                            <div class="trending-reason">🌙 Night mode essentials</div>
+                        </div>
+                        <div class="trending-price">₹199</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teacher's Live Lists -->
+            <section class="teachers-lists-section">
+                <h2 class="section-title">Teacher's Live Lists</h2>
+                <div class="teachers-grid slide-in-right">
+                    <div class="teacher-list-card">
+                        <div class="teacher-info">
+                            <div class="teacher-avatar">👨‍🏫</div>
+                            <div class="teacher-details">
+                                <div class="teacher-name">Prof. Sarah Chen</div>
+                                <div class="teacher-subject">Industrial Design</div>
+                            </div>
+                            <div class="list-status live">LIVE</div>
+                        </div>
+                        <div class="list-title">"Design Thinking Workshop Kit"</div>
+                        <div class="list-items">
+                            <span class="list-item">Sketch markers (12)</span>
+                            <span class="list-item">Grid paper</span>
+                            <span class="list-item">Sticky notes</span>
+                            <span class="list-more">+5 more</span>
+                        </div>
+                        <div class="list-footer">
+                            <span class="list-students">23 students following</span>
+                            <button class="btn-follow">Follow List</button>
+                        </div>
+                    </div>
+
+                    <div class="teacher-list-card">
+                        <div class="teacher-info">
+                            <div class="teacher-avatar">👩‍🏫</div>
+                            <div class="teacher-details">
+                                <div class="teacher-name">Dr. Meera Joshi</div>
+                                <div class="teacher-subject">Architecture</div>
+                            </div>
+                            <div class="list-status updated">UPDATED</div>
+                        </div>
+                        <div class="list-title">"Semester 6 Final Project"</div>
+                        <div class="list-items">
+                            <span class="list-item">Technical pens</span>
+                            <span class="list-item">Scale rulers</span>
+                            <span class="list-item">Tracing paper</span>
+                            <span class="list-more">+8 more</span>
+                        </div>
+                        <div class="list-footer">
+                            <span class="list-students">47 students following</span>
+                            <button class="btn-follow followed">Following</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Buddy System Dashboard -->
+            <section class="buddy-dashboard-section">
+                <h2 class="section-title">Buddy System Dashboard</h2>
+                <div class="buddy-stats">
+                    <div class="buddy-stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-number">12/15</div>
+                        <div class="stat-label">Weekly Goals</div>
+                    </div>
+                    <div class="buddy-stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-number">847</div>
+                        <div class="stat-label">Total Points</div>
+                    </div>
+                    <div class="buddy-stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Active Buddies</div>
+                    </div>
+                    <div class="buddy-stat-card">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-number">94%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+
+                <div class="buddy-activities">
+                    <h3>Buddy Check-ins Today</h3>
+                    <div class="buddy-checkins">
+                        <div class="checkin-item">
+                            <div class="checkin-avatar">🎨</div>
+                            <div class="checkin-content">
+                                <div class="checkin-name">Arjun K.</div>
+                                <div class="checkin-goal">Complete perspective drawing</div>
+                            </div>
+                            <div class="checkin-status completed">✅ Done</div>
+                        </div>
+
+                        <div class="checkin-item">
+                            <div class="checkin-avatar">📐</div>
+                            <div class="checkin-content">
+                                <div class="checkin-name">Sneha M.</div>
+                                <div class="checkin-goal">Finish floor plan sketches</div>
+                            </div>
+                            <div class="checkin-status in-progress">⏳ In Progress</div>
+                        </div>
+
+                        <div class="checkin-item">
+                            <div class="checkin-avatar">🖼️</div>
+                            <div class="checkin-content">
+                                <div class="checkin-name">Rahul S.</div>
+                                <div class="checkin-goal">3D model rendering</div>
+                            </div>
+                            <div class="checkin-status pending">⏰ Pending</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Features -->
+            <section class="special-features">
+                <div class="feature-card night-owl">
+                    <h3>🌙 Night Owl Mode</h3>
+                    <p>Working late on your project? Get energy drinks, comfort accessories, and proper lighting delivered even at 2 AM. We understand creative minds don't follow a 9-5 schedule.</p>
+                    <div class="btn btn-secondary" style="margin-top: 1rem;" onclick="showNightOwlModal()">Explore Night Mode</div>
+                </div>
+
+                <div class="feature-card teacher-rec">
+                    <h3>📋 Teacher's Recommended Lists</h3>
+                    <p>Access curated supply lists from your professors and industry experts. Share lists with classmates and get group discounts on bulk orders.</p>
+                    <div class="btn btn-secondary" style="margin-top: 1rem;" onclick="showTeacherListsModal()">View Lists</div>
+                </div>
+
+                <div class="feature-card buddy-system">
+                    <h3>👥 Buddy Check-in System</h3>
+                    <p>Connect with study partners, track your creative goals, and motivate each other. Get accountability reminders and celebrate project completions together.</p>
+                    <div class="btn btn-secondary" style="margin-top: 1rem;" onclick="showBuddyModal()">Find Buddy</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating Cart Icon -->
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒
+        <div class="cart-count" id="cartCount">0</div>
+    </div>
+
+    <script>
+        // Splash screen animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('splashScreen').classList.add('hidden');
+            }, 2500);
+        });
+
+        // Modal functions
+        function showLogin() {
+            document.getElementById('loginModal').classList.add('show');
+        }
+
+        function hideLogin() {
+            document.getElementById('loginModal').classList.remove('show');
+        }
+
+        function selectUserType(element, type) {
+            document.querySelectorAll('.user-type-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Cart functionality
+        let cartItems = 0;
+
+        function addToCart(itemName, price) {
+            cartItems++;
+            document.getElementById('cartCount').textContent = cartItems;
+            
+            // Add animation to cart icon
+            const cartIcon = document.querySelector('.cart-icon');
+            cartIcon.style.transform = 'scale(1.2)';
+            setTimeout(() => {
+                cartIcon.style.transform = 'scale(1)';
+            }, 200);
+
+            // Show success message
+            showNotification(`${itemName} added to cart!`);
+        }
+
+        function toggleCart() {
+            showNotification('Cart feature coming soon!');
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 2rem;
+                background: linear-gradient(45deg, #00b894, #00a085);
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 5px 20px rgba(0,184,148,0.3);
+                z-index: 10000;
+                animation: slideInRight 0.3s ease;
+                font-weight: 500;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOutRight 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(102,126,234,0.95)';
+            } else {
+                navbar.style.background = 'rgba(255,255,255,0.15)';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.product-card, .category-card, .action-card, .feature-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
+
+        // Parent Mode Toggle (for visual descriptions)
+        function toggleParentMode() {
+            const body = document.body;
+            const isParentMode = body.classList.contains('parent-mode');
+            
+            if (isParentMode) {
+                body.classList.remove('parent-mode');
+                showNotification('Parent Mode: OFF');
+            } else {
+                body.classList.add('parent-mode');
+                showNotification('Parent Mode: ON - Visual descriptions enabled');
+            }
+        }
+
+        // Quick delivery zone check
+        function checkDeliveryZone() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    // Simulate delivery zone check
+                    showNotification('Great! 30-minute delivery available in your area');
+                }, function(error) {
+                    showNotification('Please enable location to check delivery zones');
+                });
+            } else {
+                showNotification('Geolocation not supported by this browser');
+            }
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'k':
+                        e.preventDefault();
+                        document.querySelector('input[type="search"]')?.focus();
+                        break;
+                    case '/':
+                        e.preventDefault();
+                        showLogin();
+                        break;
+                }
+            }
+            if (e.key === 'Escape') {
+                hideLogin();
+            }
+        });
+
+        // Add CSS for additional animations
+        const additionalCSS = `
+            @keyframes slideOutRight {
+                to { transform: translateX(100%); opacity: 0; }
+            }
+            
+            .parent-mode .product-info p::after {
+                content: " (Visual: " attr(data-visual) ")";
+                color: #667eea;
+                font-weight: 500;
+            }
+            
+            .search-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: rgba(0,0,0,0.8);
+                display: none;
+                justify-content: center;
+                align-items: center;
+                z-index: 9998;
+            }
+            
+            .search-box {
+                background: white;
+                padding: 2rem;
+                border-radius: 20px;
+                width: 90%;
+                max-width: 500px;
+            }
+            
+            .search-input {
+                width: 100%;
+                padding: 1rem;
+                border: 2px solid #e0e0e0;
+                border-radius: 15px;
+                font-size: 1.2rem;
+                outline: none;
+            }
+            
+            .search-input:focus {
+                border-color: #667eea;
+            }
+            
+            .mobile-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(102,126,234,0.95);
+                backdrop-filter: blur(10px);
+                padding: 2rem;
+                z-index: 999;
+            }
+            
+            .mobile-menu.show {
+                display: block;
+            }
+            
+            .mobile-menu a {
+                display: block;
+                color: white;
+                text-decoration: none;
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                font-weight: 500;
+            }
+            
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+            }
+            
+            .hamburger span {
+                width: 25px;
+                height: 3px;
+                background: white;
+                margin: 3px 0;
+                transition: 0.3s;
+            }
+            
+            @media (max-width: 768px) {
+                .hamburger {
+                    display: flex;
+                }
+                
+                .nav-links {
+                    display: none;
+                }
+            }
+            
+            .subscription-banner {
+                background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+                color: white;
+                text-align: center;
+                padding: 1rem;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .subscription-banner::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255,255,255,0.1) 10px,
+                    rgba(255,255,255,0.1) 20px
+                );
+                animation: slide 20s linear infinite;
+            }
+            
+            @keyframes slide {
+                0% { transform: translateX(-50px); }
+                100% { transform: translateX(50px); }
+            }
+            
+            .loyalty-points {
+                position: fixed;
+                top: 120px;
+                right: 2rem;
+                background: linear-gradient(45deg, #feca57, #ff9ff3);
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                box-shadow: 0 3px 15px rgba(254,202,87,0.3);
+                z-index: 1000;
+            }
+            
+            .quick-pick-zone {
+                position: fixed;
+                bottom: 120px;
+                right: 2rem;
+                background: linear-gradient(45deg, #26de81, #20bf6b);
+                color: white;
+                padding: 0.8rem 1.2rem;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 20px rgba(38,222,129,0.3);
+                z-index: 1000;
+            }
+            
+            .quick-pick-zone:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(38,222,129,0.4);
+            }
+
+            /* Activity Feed Styles */
+            .activity-section {
+                margin-bottom: 3rem;
+            }
+
+            .activity-feed {
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 2rem;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .activity-item {
+                display: flex;
+                gap: 1rem;
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .activity-item:last-child {
+                border-bottom: none;
+            }
+
+            .activity-avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #ff6b6b, #feca57);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+
+            .activity-content {
+                flex: 1;
+                color: white;
+            }
+
+            .activity-header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+            }
+
+            .activity-user {
+                font-weight: 600;
+            }
+
+            .activity-time {
+                font-size: 0.8rem;
+                opacity: 0.7;
+            }
+
+            .activity-text {
+                margin-bottom: 0.5rem;
+                opacity: 0.9;
+            }
+
+            .activity-status {
+                display: inline-block;
+                padding: 0.2rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .activity-status.delivered {
+                background: #26de81;
+                color: white;
+            }
+
+            .activity-status.completed {
+                background: #feca57;
+                color: #333;
+            }
+
+            .activity-actions {
+                display: flex;
+                gap: 0.5rem;
+                margin-top: 0.5rem;
+            }
+
+            .activity-btn {
+                padding: 0.3rem 0.8rem;
+                background: rgba(255,255,255,0.2);
+                color: white;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: all 0.3s ease;
+            }
+
+            .activity-btn:hover {
+                background: rgba(255,255,255,0.3);
+            }
+
+            .activity-rewards {
+                color: #feca57;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+
+            /* Trending Section */
+            .trending-section {
+                margin-bottom: 3rem;
+            }
+
+            .trending-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 2rem;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .trending-item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+                background: rgba(255,255,255,0.1);
+                border-radius: 15px;
+                color: white;
+                transition: all 0.3s ease;
+            }
+
+            .trending-item:hover {
+                background: rgba(255,255,255,0.2);
+                transform: translateX(5px);
+            }
+
+            .trending-rank {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #feca57;
+                width: 40px;
+                text-align: center;
+            }
+
+            .trending-content {
+                flex: 1;
+            }
+
+            .trending-name {
+                font-weight: 600;
+                margin-bottom: 0.2rem;
+            }
+
+            .trending-orders {
+                font-size: 0.8rem;
+                opacity: 0.7;
+                margin-bottom: 0.2rem;
+            }
+
+            .trending-reason {
+                font-size: 0.8rem;
+                color: #26de81;
+            }
+
+            .trending-price {
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #feca57;
+            }
+
+            /* Teacher's Lists */
+            .teachers-lists-section {
+                margin-bottom: 3rem;
+            }
+
+            .teachers-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                gap: 2rem;
+            }
+
+            .teacher-list-card {
+                background: rgba(255,255,255,0.15);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 2rem;
+                color: white;
+                border: 1px solid rgba(255,255,255,0.1);
+                transition: all 0.3s ease;
+            }
+
+            .teacher-list-card:hover {
+                transform: translateY(-5px);
+                background: rgba(255,255,255,0.2);
+            }
+
+            .teacher-info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .teacher-avatar {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+            }
+
+            .teacher-details {
+                flex: 1;
+            }
+
+            .teacher-name {
+                font-weight: 600;
+                margin-bottom: 0.2rem;
+            }
+
+            .teacher-subject {
+                font-size: 0.8rem;
+                opacity: 0.7;
+            }
+
+            .list-status {
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.7rem;
+                font-weight: 700;
+            }
+
+            .list-status.live {
+                background: #ff6b6b;
+                animation: pulse 2s infinite;
+            }
+
+            .list-status.updated {
+                background: #26de81;
+            }
+
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+            }
+
+            .list-title {
+                font-weight: 600;
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+
+            .list-items {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .list-item {
+                background: rgba(255,255,255,0.2);
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.8rem;
+            }
+
+            .list-more {
+                color: #feca57;
+                font-weight: 600;
+                font-size: 0.8rem;
+            }
+
+            .list-footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .list-students {
+                font-size: 0.8rem;
+                opacity: 0.7;
+            }
+
+            .btn-follow {
+                padding: 0.5rem 1rem;
+                background: linear-gradient(45deg, #26de81, #20bf6b);
+                color: white;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: all 0.3s ease;
+            }
+
+            .btn-follow:hover {
+                transform: scale(1.05);
+            }
+
+            .btn-follow.followed {
+                background: rgba(255,255,255,0.2);
+            }
+
+            /* Buddy Dashboard */
+            .buddy-dashboard-section {
+                margin-bottom: 3rem;
+            }
+
+            .buddy-stats {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .buddy-stat-card {
+                background: rgba(255,255,255,0.15);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 1.5rem;
+                text-align: center;
+                color: white;
+                border: 1px solid rgba(255,255,255,0.1);
+                transition: all 0.3s ease;
+            }
+
+            .buddy-stat-card:hover {
+                transform: translateY(-5px);
+                background: rgba(255,255,255,0.2);
+            }
+
+            .stat-icon {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #feca57;
+                margin-bottom: 0.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+
+            .buddy-activities {
+                background: rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 2rem;
+                border: 1px solid rgba(255,255,255,0.1);
+                color: white;
+            }
+
+            .buddy-activities h3 {
+                margin-bottom: 1.5rem;
+                color: white;
+            }
+
+            .buddy-checkins {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .checkin-item {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+                background: rgba(255,255,255,0.1);
+                border-radius: 15px;
+                transition: all 0.3s ease;
+            }
+
+            .checkin-item:hover {
+                background: rgba(255,255,255,0.2);
+            }
+
+            .checkin-avatar {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: linear-gradient(45deg, #ff6b6b, #feca57);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1rem;
+            }
+
+            .checkin-content {
+                flex: 1;
+            }
+
+            .checkin-name {
+                font-weight: 600;
+                margin-bottom: 0.2rem;
+            }
+
+            .checkin-goal {
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+
+            .checkin-status {
+                padding: 0.3rem 0.8rem;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .checkin-status.completed {
+                background: #26de81;
+                color: white;
+            }
+
+            .checkin-status.in-progress {
+                background: #feca57;
+                color: #333;
+            }
+
+            .checkin-status.pending {
+                background: rgba(255,255,255,0.2);
+                color: white;
+            }
+        `;
+        
+        const styleSheet = document.createElement('style');
+        styleSheet.textContent = additionalCSS;
+        document.head.appendChild(styleSheet);
+    </script>
+
+    <!-- Additional Features -->
+    <div class="subscription-banner">
+        <div style="position: relative; z-index: 1;">
+            🎨 <strong>Sketch Monthly</strong> - Get curated art supplies delivered every month! <strong>₹999/month</strong>
+        </div>
+    </div>
+
+    <div class="loyalty-points">
+        🌟 Loyalty Points: 1,250
+    </div>
+
+    <div class="quick-pick-zone" onclick="checkDeliveryZone()">
+        ⚡ Quick Pick Zone
+    </div>
+
+    <!-- Mobile hamburger menu -->
+    <div class="hamburger" onclick="toggleMobileMenu()" style="display: none;">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">🏠 Home</a>
+        <a href="#categories">📂 Categories</a>
+        <a href="#quick-pick">⚡ Quick Pick</a>
+        <a href="#subscriptions">📦 Subscriptions</a>
+        <a href="#buddy">👥 Buddy System</a>
+        <a href="#" onclick="toggleParentMode()">👨‍👩‍👧‍👦 Parent Mode</a>
+        <a href="#profile">👤 Profile</a>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('show');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+                menu.classList.remove('show');
+            }
+        });
+
+        // Update hamburger display on resize
+        window.addEventListener('resize', function() {
+            const hamburger = document.querySelector('.hamburger');
+            if (window.innerWidth <= 768) {
+                hamburger.style.display = 'flex';
+            } else {
+                hamburger.style.display = 'none';
+                document.getElementById('mobileMenu').classList.remove('show');
+            }
+        });
+
+        // Initialize hamburger visibility
+        if (window.innerWidth <= 768) {
+            document.querySelector('.hamburger').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
